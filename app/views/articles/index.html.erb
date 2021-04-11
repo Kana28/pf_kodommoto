@@ -1,0 +1,42 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-4" style="background-color: rgba(255, 250, 205, 0.5);">
+      <br>
+      <h3><i class="fas fa-pen"></i> 新規投稿</h3>
+      <%= form_with model:@article, local:true do |f| %>
+        <br>
+        <h5>タイトル</h5>
+        <%= f.text_field :title %>
+        <br>
+        <br>
+        <!--<h4>ジャンル</h4>-->
+        <!--<= f.text_field :genre %>-->
+        <!--<br>-->
+        <h5>画像</h5>
+        <%= f.attachment_field :user_image %>
+        <br>
+        <br>
+        <h5>紹介文</h5>
+        <%= f.text_area :body %>
+        <br>
+        <br>
+        <%= f.submit '投稿', class: "btn btn-success" %>
+      <% end %>
+      <br>
+    </div>
+
+
+    <div class="col-md-8">
+    <br>
+    <h3><i class="fas fa-book-open"></i> 投稿一覧</h3>
+    <% @articles.each do |article| %>
+      <br>
+      <%= link_to article_path(article.id), class: "btn-link", :style=>"color:#0999FF;" do %>
+        <%= article.title %><br>
+        <%= attachment_image_tag(article, :user_image, size: "150x150", fallback: "no_image.jpg") %>
+      <% end %>
+    <% end %>
+    <%= paginate @articles %>
+    </div>
+  </div>
+</div>

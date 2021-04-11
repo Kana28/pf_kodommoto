@@ -1,6 +1,35 @@
 <br />
 <div class='container'>
   <div class='row'>
-    <h1 class="px-3 mx-auto">ようこそ <strong>コドモット</strong>へ!</h1>
+    <h1 class="px-3 mx-auto"><strong>コドモットとは？</strong></h1>
+  </div>
+  <br>
+  <div class="row">
+    <h5 class="px-3 mx-auto">子育てに関わる人々の悩み相談やお出かけスポットの共有、交流の場などができるサイトです。</h5>
+    <h5 class="px-3 mx-auto">子どもを支える、育てるには親だけではなく周りにいる大人や家族、<strong>あなたの力が必要</strong>です！</h5>
+  </div>
+  <br>
+  <br>
+  <div class="row">
+    <div class="col-xs-4 col-md-4">
+      <h5 class="text-info"><i class="fas fa-heart-broken"></i>こんなことに悩んでいませんか？</h5><br>
+      <p>初めての子育てでどうしたらいいかわからない</p>
+      <p>
+        いつも同じ公園ばかり、、、<br>
+        たまには別の場所で遊ばせてあげたい
+      </p>
+      <p>出産祝いのお返し何がいいかな？</p>
+      <h5><%= link_to "みんなの投稿を覗いてみましょう！", home_about_path, class: "text-primary" %></h5>
+    </div>
+    <div class="col-xs-4 col-md-4">
+      <%= image_tag('about.png') %>
+    </div>
+    <div class="col-xs-4 col-md-4">
+      <h5 class="text-warning"><i class="fas fa-share"></i>その情報、共有してくれませんか？</h5><br>
+      <p>子育ての合間にお小遣い稼ぎ</p>
+      <p>こんな時、我が家はこんな方法使ってます</p>
+      <p>パパだけの交流会開きます！</p>
+      <h5><%= link_to "投稿してみよう！", home_about_path, class: "text-primary" %></h5>
+    </div>
   </div>
 </div>

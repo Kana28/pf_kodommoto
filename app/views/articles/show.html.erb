@@ -1,0 +1,8 @@
+<div class="article-body">
+  <%= attachment_image_tag(@article, :user_image, size: "150x150", fallback: "no_image.jpg") %>
+  <p>投稿日時：<%= @article.created_at.strftime('%Y/%m/%d') %></p>
+  <p>タイトル：<%= @article.title %></p>
+  <p>紹介：<%= @article.body %></p>
+  <!--<p>ユーザーネーム：<= @article.user.name %></p>-->
+
+</div>
