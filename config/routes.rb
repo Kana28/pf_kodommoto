@@ -18,4 +18,6 @@ Rails.application.routes.draw do
 
   resources :articles, only: [:index, :show, :create, :edit, :update]
 
+  resources :genres, only: [:index, :create, :edit, :update, :destroy]
+
 end
