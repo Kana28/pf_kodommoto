@@ -29,13 +29,7 @@
     <div class="col-md-8">
     <br>
     <h3><i class="fas fa-book-open"></i> 投稿一覧</h3>
-    <% @articles.each do |article| %>
-      <br>
-      <%= link_to article_path(article.id), class: "btn-link", :style=>"color:#0999FF;" do %>
-        <%= article.title %><br>
-        <%= attachment_image_tag(article, :user_image, size: "200x150", fallback: "no_image.jpg") %>
-      <% end %>
-    <% end %>
+    <%= render 'index', articles: @articles%>
     <%= paginate @articles %>
     </div>
   </div>

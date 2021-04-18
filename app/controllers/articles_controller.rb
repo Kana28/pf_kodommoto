@@ -1,7 +1,9 @@
 class ArticlesController < ApplicationController
+
   def index
     @article = Article.new
-    @articles = Article.page(params[:page]).per(6)
+    @articles = Article.page(params[:page]).per(4)
+    @users = User.all
   end
 
   def show
@@ -10,8 +12,12 @@ class ArticlesController < ApplicationController
 
   def create
     article = Article.new(article_params)
-    article.save
-    redirect_to article_path(article.id)
+    article.user_id = current_user.id
+    if article.save
+      redirect_to article_path(article.id)
+    else
+      render :index #投稿がうまくいかなかった場合に
+    end
   end
 
   def edit

@@ -1,0 +1,7 @@
+<%= attachment_image_tag user, :profile_image, size: "80x80", fallback: "user_no_image.png", class:"mt-3 rounded-circle"; %>
+&emsp;<strong><%= user.name %></strong>
+　<br>
+　<br>
+<%= link_to edit_user_path(user), class: "btn btn-outline-secondary btn-block" do %>
+  <i class="fas fa-user-cog edit"> 編集ページ</i>
+<% end %>
