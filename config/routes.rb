@@ -16,7 +16,7 @@ Rails.application.routes.draw do
 
   resources :users, only: [:index, :show, :edit, :update]
 
-  resources :articles, only: [:index, :show, :create, :edit, :update]
+  resources :articles, only: [:index, :show, :create, :edit, :update, :destroy]
 
   resources :genres, only: [:index, :create, :edit, :update, :destroy]
 

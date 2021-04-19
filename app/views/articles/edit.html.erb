@@ -1,2 +1,25 @@
-<h1>Articles#edit</h1>
-<p>Find me in app/views/articles/edit.html.erb</p>
+<div class='container'>
+  <div class='row'>
+    <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0 mx-auto">
+      <br>
+      <h3><i class="fas fa-edit"></i> 投稿記事の編集</h3>
+      <%= form_with model: @article, local:true do |f| %>
+        <%= f.label :ジャンル %>
+        <%= f.collection_select :genre_id, Genre.all, :id, :name, { prompt: '選択してください' }, class: 'form-control-file genre_id' %>
+        <br>
+        <%= f.label :タイトル %>
+        <%= f.text_field :title, class: "form-control title" %>
+        <br>
+        <%= f.label :画像 %>
+        <%= f.attachment_field :user_image, class: "form-control-file user_image" %>
+        <br>
+        <%= f.label :本文 %>
+        <%= f.text_field :body, class: "form-control-file body" %>
+        <br>
+        <br>
+        <%= f.submit '編集する', class: 'btn btn-secondary' %>
+        </div>
+      <% end %>
+      </div>
+    </div>
+  </div>
