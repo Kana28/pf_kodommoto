@@ -40,6 +40,25 @@
 
     　<div class="comments">
         <h5>コメント件数：<%= @article.article_comments.count %></h5>
+
+
+
+        <% if @article.favorited_by?(current_user) %>
+          <p>
+            <%= link_to article_favorites_path(@article), method: :delete do %>
+              ♥<%= @article.favorites.count %> いいね
+            <% end %>
+          </p>
+          <% else %>
+          <p>
+            <%= link_to article_favorites_path(@article), method: :post do %>
+              ♡<%= @article.favorites.count %> いいね
+            <% end %>
+          </p>
+        <% end %>
+
+
+
         <% @article.article_comments.each do |article| %>
           <p>
             <i>

@@ -18,6 +18,7 @@ Rails.application.routes.draw do
 
   resources :articles, only: [:index, :show, :create, :edit, :update, :destroy] do
     resources :article_comments, only: [:create, :destroy]
+    resource :favorites, only: [:create, :destroy]
   end
 
   resources :genres, only: [:index, :create, :edit, :update, :destroy]
