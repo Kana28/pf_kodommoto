@@ -8,8 +8,11 @@
     <div class="card-body">
       <%= attachment_image_tag article, :user_image, size: "160x160", fallback: "no_image.jpg", class:"card-img-top"; %>
     </div>
-    <div class="card-footer bg-light">
+    <div class="card-footer text-dark bg-light">
       <%= attachment_image_tag article.user, :profile_image, size: "40x40", fallback: "user_no_image.png", class:"mt-3 rounded-circle"; %>
+      
+      <!--<i class="far fa-comment-dots"></i><= @article.article_comments.count %>-->
+    
     </div>
   </div>
   <% end %>

@@ -1,5 +1,9 @@
 class Article < ApplicationRecord
+
+  attachment :user_image
+
   belongs_to :user, optional: true
   has_many :genres
-  attachment :user_image
+  has_many :article_comments, dependent: :destroy
+
 end
