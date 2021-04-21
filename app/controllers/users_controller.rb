@@ -10,7 +10,8 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @articles = @user.articles.reverse_order
+    # ページネート
+    @articles = @user.articles.reverse_order.page(params[:page]).per(3)
   end
 
   def edit
@@ -24,7 +25,7 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     if @user.update(user_params)
-      redirect_to user_path(@user.id), notice: 'You have updated user successfully.'
+      redirect_to user_path(@user.id), notice: 'ユーザ情報が変更されました'
     else
       render :edit
     end

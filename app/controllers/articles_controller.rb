@@ -2,14 +2,14 @@ class ArticlesController < ApplicationController
 
   def index
     @article = Article.new
-    @articles = Article.page(params[:page]).per(4)
+    @articles = Article.page(params[:page]).per(3)
     @users = User.all
   end
 
   def show
     @article = Article.find(params[:id])
     @users = User.all
-    
+
     @article_comment = ArticleComment.new
   end
 
@@ -30,13 +30,13 @@ class ArticlesController < ApplicationController
   def update
     article = Article.find(params[:id])
     article.update(article_params)
-    redirect_to article_path(article)
+    redirect_to article_path(article), notice: '記事内容が変更されました'
   end
-  
+
   def destroy
     article = Article.find(params[:id])
     article.destroy
-    redirect_to articles_path
+    redirect_to articles_path, notice: '記事を削除しました'
   end
 
 
