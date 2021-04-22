@@ -2,12 +2,29 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .comment_size{
-  font-size: 1.4em;
+  font-size: 1.0em;
   color: #1E90FF;
-  
+
 }
 
 .favorite_size{
-  font-size: 1.4em;
+  font-size: 1.0em;
   color: #FF0000;
+}
+
+.card{
+  margin: 10px 20px;
+}
+
+.article_body {
+  width: 100%;
+  height: auto;
+  background-image: image-url("background.png");
+  background-size: cover;
+  background-position: right;
+}
+
+.pagination {
+  justify-content: center;
+  color: white;
 }

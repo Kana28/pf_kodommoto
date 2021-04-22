@@ -1,7 +1,6 @@
 <div class="container">
   <br>
   <h2><strong>ログイン</strong></h2>
-  <br>
   <%= form_with model: @user, url: user_session_path, local: true do |f| %>
     <div class="field">
       <%= f.label :メールアドレス %><br />

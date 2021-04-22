@@ -2,7 +2,7 @@ class ArticlesController < ApplicationController
 
   def index
     @article = Article.new
-    @articles = Article.page(params[:page]).per(3)
+    @articles = Article.page(params[:page]).per(6).order('updated_at DESC')
     @users = User.all
   end
 
