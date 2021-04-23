@@ -5,13 +5,12 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   attachment :profile_image
-  
+
   has_many :articles, dependent: :destroy
   has_many :article_comments, dependent: :destroy
   has_many :favorites, dependent: :destroy
-  
-  validates :name,
-  uniqueness: true,
-  length: {maximum: 8, minimum: 2}
 
+  validates :name,
+            uniqueness: true,
+            length: { maximum: 8, minimum: 2 }
 end

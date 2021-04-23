@@ -5,7 +5,6 @@ class UsersController < ApplicationController
     @users = User.all
     @article = Article.new
     @articles = Article.all
-
   end
 
   def show
@@ -17,9 +16,7 @@ class UsersController < ApplicationController
   def edit
     @user = User.find(params[:id])
     @users = User.all
-    if current_user.id != @user.id
-      redirect_to user_path(current_user.id)
-    end
+    redirect_to user_path(current_user.id) if current_user.id != @user.id
   end
 
   def update
@@ -31,11 +28,9 @@ class UsersController < ApplicationController
     end
   end
 
-
   private
 
   def user_params
     params.require(:user).permit(:name, :profile_image)
   end
-
 end

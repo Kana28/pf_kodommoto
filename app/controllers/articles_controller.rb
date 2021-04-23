@@ -40,7 +40,6 @@ class ArticlesController < ApplicationController
     redirect_to articles_path, notice: '※記事を削除しました'
   end
 
-
   private
 
   def article_params
