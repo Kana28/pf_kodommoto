@@ -1,13 +1,32 @@
-<div class=container>
-  <div class="text-center"><br />
-    <h1>コドモット</h1>
-  </div>
-  <div class="row">
-    <div class="col-md-3"><br />
-      <h4>カテゴリー</h4>
+<div class="top_body">
+  <div class='container'>
+    <br>
+    <br>
+    <div class='row'>
+      <h3 class="px-3 mx-auto"><strong><h>Welcome to&emsp;&emsp;<h3><h1>　 コドモット</strong></h1>
     </div>
-    <div class="col-md-9">
+    <br>
+    <div class="row">
+      
+      <p class="px-3 mx-auto">
+        <%= link_to new_user_registration_path, class: "btn btn-success" do %>
+          <i class="fas fa-user-plus"> 新規登録</i>
+        <% end %>
+      </p>        
+      <p class="px-3 mx-auto">
+        <%= link_to new_user_session_path, class: "btn btn-info" do %>
+          <i class="fas fas fa-sign-in-alt"> ログイン</i>
+        <% end %>
+      </p>
+    </div>
+    <br>
+    <br>
+    <div class='row'>
+      <h5 class="px-3 mx-auto">こどもとの時間をより豊かに　さぁ始めてみよう！</h5>
+    </div>
 
-    </div>
-  </div>
+
+    <br>
+    <br>
+</div>
 </div>

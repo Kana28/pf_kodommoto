@@ -1,19 +1,26 @@
 // Place all the styles related to the articles controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-.comment_size{
+.comment_size {
   font-size: 1.0em;
   color: #1E90FF;
 
 }
 
-.favorite_size{
+.favorite_size {
   font-size: 1.0em;
   color: #FF0000;
 }
 
-.card{
-  margin: 10px 20px;
+.card {
+  margin: 10px 15px;
+}
+
+.card-body {
+   width: 90%;
+   height: 80%;
+   object-fit: cover;
+   object-position: absolute;
 }
 
 .article_body {
@@ -26,5 +33,5 @@
 
 .pagination {
   justify-content: center;
-  color: white;
+  color: dark;
 }

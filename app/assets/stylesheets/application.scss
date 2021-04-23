@@ -16,3 +16,35 @@
  @import "bootstrap";
  @import 'font-awesome-sprockets';
  @import 'font-awesome';
+
+ @font-face {
+  font-family: '03UI';
+  src: asset_url('/assets/fonts/03UI.otf') format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+ body {
+  font-family: '03UI';
+}
+
+
+
+ .navbar {
+  width: auto;
+  height: auto;
+  background-image: image-url("background2.png");
+  background-size: cover;
+  background-position: bottom;
+}
+
+
+
+
+ .footer {
+  width: auto;
+  height: auto;
+  background-image: image-url("background2.png");
+  background-size: cover;
+  background-position: top;
+}

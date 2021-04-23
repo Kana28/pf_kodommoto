@@ -1,4 +1,5 @@
 class ArticlesController < ApplicationController
+  before_action :authenticate_user!
 
   def index
     @article = Article.new
@@ -30,13 +31,13 @@ class ArticlesController < ApplicationController
   def update
     article = Article.find(params[:id])
     article.update(article_params)
-    redirect_to article_path(article), notice: '記事内容が変更されました'
+    redirect_to article_path(article), notice: '※記事内容が変更されました'
   end
 
   def destroy
     article = Article.find(params[:id])
     article.destroy
-    redirect_to articles_path, notice: '記事を削除しました'
+    redirect_to articles_path, notice: '※記事を削除しました'
   end
 
 

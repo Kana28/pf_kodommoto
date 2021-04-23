@@ -1,8 +1,20 @@
 <div class="article_body">
-<div class="container">
+<div class="container px-5 px-sm-0">
   <%= notice %>
   <div class="row">
     <div class="col-xs-12 col-md-4" style="background-color: rgba(255, 250, 205, 0.5);">
+
+      <% if @article.errors.any? %>
+        <div>
+          <ul style="color: red">       <!--↓エラーが１つの時はerrorにしたい-->
+            <h3><%= @article.errors.count %>errors prohibited this obj from being saved:</h3><br>
+            <% @article.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+
       <br>
       <h3><i class="fas fa-pen"></i> 新規投稿</h3>
       <%= form_with model:@article, local:true do |f| %>
@@ -27,16 +39,14 @@
       <br>
     </div>
 
-
     <div class="col-xs-12 col-md-8">
-    <br>
-    <h3 class="text text-white text-center"><i class="fas fa-book-open"></i> 投稿一覧</h3>
-    <%= render 'index', articles: @articles%>
-    <br>
-    <h5 class="pagination justify-content-center">
-      <%= paginate @articles %>
-    </5>
-    
+      <br>
+      <h3 class="text text-white text-center"><i class="fas fa-book-open"></i> 投稿一覧</h3>
+      <%= render 'index', articles: @articles%>
+      <br>
+      <h5 class="pagination justify-content-center">
+        <%= paginate @articles %>
+      </h5>
     </div>
   </div>
 </div>
