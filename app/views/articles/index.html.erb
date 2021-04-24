@@ -1,12 +1,11 @@
 <div class="article_body">
 <div class="container px-5 px-sm-0">
-  <%= notice %>
   <div class="row">
     <div class="col-xs-12 col-md-4" style="background-color: rgba(255, 250, 205, 0.5);">
-
+      
       <% if @article.errors.any? %>
         <div>
-          <ul style="color: red">       <!--↓エラーが１つの時はerrorにしたい-->
+          <ul style="color: red">
             <h3><%= @article.errors.count %>errors prohibited this obj from being saved:</h3><br>
             <% @article.errors.full_messages.each do |message| %>
               <li><%= message %></li>
@@ -20,7 +19,8 @@
       <%= form_with model:@article, local:true do |f| %>
         <br>
         <h5><%= f.label :genre_id, 'ジャンル' %></h5>
-        <%= f.collection_select :genre_id, Genre.all, :id, :name, { prompt: '選択してください' }, class: 'form-control' %>
+        <%= f.collection_select :genre_id, Genre.all, :id, :name, include_blank: '選択してください' , class: 'form-control' %>
+        <br>
         <br>
         <h5><%= f.label :title, 'タイトル' %></h5>
         <%= f.text_field :title %>
@@ -40,6 +40,7 @@
     </div>
 
     <div class="col-xs-12 col-md-8">
+      <%= notice %>
       <br>
       <h3 class="text text-white text-center"><i class="fas fa-book-open"></i> 投稿一覧</h3>
       <%= render 'index', articles: @articles%>

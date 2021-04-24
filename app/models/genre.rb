@@ -1,3 +1,3 @@
 class Genre < ApplicationRecord
-  belongs_to :article, optional: true
+  has_many :article
 end

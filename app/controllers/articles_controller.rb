@@ -20,6 +20,9 @@ class ArticlesController < ApplicationController
     if article.save
       redirect_to article_path(article.id)
     else
+      @article = article
+      @articles = Article.page(params[:page]).per(6).order('updated_at DESC')
+      @users = User.all
       render :index
     end
   end
