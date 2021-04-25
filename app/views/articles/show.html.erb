@@ -16,8 +16,8 @@
               </div>
             </div>
           </div>
-          <div class="card-body">
-            <%= attachment_image_tag(@article, :user_image, size: "270x260", fallback: "no_image.jpg") %>
+          <div class="card-body mx-auto">
+            <%= attachment_image_tag @article, :user_image, size: "250x240", fallback: "no_image.jpg", class: "card-img-top" %>
           </div>
 
         <div class="card-footer">
@@ -78,6 +78,7 @@
           <%= f.submit "送信する" %>
         <% end %>
         </div>
+      </div>
     </div>
   </div>
 </div>

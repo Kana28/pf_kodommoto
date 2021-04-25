@@ -14,8 +14,8 @@
       <% end %>
 
     </div>
-    <div class="card-body">
-      <%= attachment_image_tag article, :user_image, size: "150x140", fallback: "no_image.jpg", class:"card-img-top"; %>
+    <div class="card-body mx-auto">
+      <%= attachment_image_tag article, :user_image, size: "160x140", fallback: "no_image.jpg", class:"card-img-top" %>
     </div>
     <div class="card-footer text-dark bg-light">
       <%= attachment_image_tag article.user, :profile_image, size: "30x30", fallback: "user_no_image.png", class:"mt-3 rounded-circle"; %>

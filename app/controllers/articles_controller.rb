@@ -29,12 +29,18 @@ class ArticlesController < ApplicationController
 
   def edit
     @article = Article.find(params[:id])
+    if @article.user_id != current_user.id
+      redirect_to article_path
+    end
   end
 
   def update
     article = Article.find(params[:id])
-    article.update(article_params)
-    redirect_to article_path(article), notice: '※記事内容が変更されました'
+    if article.update(article_params)
+      redirect_to article_path(article), notice: '※記事内容が変更されました'
+    else
+      render "edit"
+    end
   end
 
   def destroy
