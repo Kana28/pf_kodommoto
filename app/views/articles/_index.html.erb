@@ -3,7 +3,7 @@
   <div class="card text-white bg-light mb-3" style="max-width: 13rem;">
     <div class="card-header">
 
-      <% if article.genre_id == 2 %>
+      <% if article.genre_id == 1 %>
         <%= link_to article_path(article.id), class: "btn btn-info btn-block", :style=>"color:#000000;" do %>
           <%= article.title %>
         <% end %>
