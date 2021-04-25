@@ -67,3 +67,10 @@ end
 
 gem 'rubocop', require: false
 gem 'rubocop-rails', require: false
+
+group :test do
+  gem 'capybara'
+  gem 'rspec-rails'
+  gem "factory_bot_rails"
+  gem 'faker'
+end
